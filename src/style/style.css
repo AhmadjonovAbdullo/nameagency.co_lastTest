@@ -1,0 +1,31 @@
+.menu-btn {
+    float: right;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn-elt::before,
+.menu-btn-elt::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: white;
+    transition: all .5s ease-in-out;
+}
+.menu-btn-elt::before {
+    transform: translateY(-6px);
+}
+.menu-btn-elt::after {
+    transform: translateY(6px);
+}
+
+.menu-btn.open .menu-btn-elt::before {
+    transform: rotate(45deg) translateY(0);
+}
+
+.menu-btn.open .menu-btn-elt::after {
+    transform: rotate(-45deg) translateY(0);
+}

@@ -1,0 +1,101 @@
+body {
+  background-color: #0f0f0f !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif !important;
+  font-weight: 200;
+}
+
+.forDefault {
+  background-color: black;
+  background-image: url("images/загружено (1).png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cards {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.cards:hover .hover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1f;
+  transition-duration: .3s;
+}
+
+nav {
+  height: 100px;
+  line-height: 15vh;
+  z-index: +1;
+}
+
+.column-1 {
+  background-image: url("name-design-agency-gliz.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.display-x {
+  font-size: 10vw;
+  font-weight:300;
+  line-height:1.2;
+}
+
+.card-1 {
+  border-right: 5px solid #0f0f0f;
+}
+
+.card-2 {
+  border-left: 5px solid #0f0f0f;
+}
+
+.h-33 {
+  height: 33% !important;
+}
+
+
+.h-10 {
+  height: 10vh !important;
+}
+
+.Vh-200 {
+  height: 200vh;
+}
+
+.Vh-150 {
+  height: 150vh;
+}
+
+.Vh-100 {
+  height: 100vh;
+}
+
+.Vh-85 {
+  height: 85vh;
+}
+
+.Link {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: #f1f1f1;
+    transition: all .3s ease;
+  }
+  &:hover {
+    border: none;
+    &::after {
+      width: 100%;
+    }
+  }
+}
