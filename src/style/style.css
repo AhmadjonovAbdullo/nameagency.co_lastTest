@@ -5,21 +5,32 @@
     cursor: pointer;
     transition: all .5s ease-in-out;
 }
+.menu-btn-elt {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
 
 .menu-btn-elt::before,
 .menu-btn-elt::after {
     content: '';
     position: absolute;
+    left: 0;
     width: 30px;
     height: 2px;
     background: white;
     transition: all .5s ease-in-out;
 }
 .menu-btn-elt::before {
-    transform: translateY(-6px);
+    top: 7px;
 }
 .menu-btn-elt::after {
-    transform: translateY(6px);
+    bottom: 7px;
 }
 
 .menu-btn.open .menu-btn-elt::before {
@@ -28,4 +39,38 @@
 
 .menu-btn.open .menu-btn-elt::after {
     transform: rotate(-45deg) translateY(0);
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: #000000;
+}
+.menu ul {
+    display: block;
+    width: 300px;
+}
+.menu .close_btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.menu .close_btn svg {
+    font-size: 22px;
+    fill: #ffffff;
 }

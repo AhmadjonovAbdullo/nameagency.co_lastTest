@@ -3,16 +3,28 @@ import {Link} from "react-router-dom";
 import img from "../name-design-agency-gliz.jpg";
 import Headroom from "react-headroom";
 import "../style/style.css";
+import Menu from './menu'
 
 class homePage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            isMenuOpen: false
+        }
     };
 
+    openMenu = () => {
+        this.setState({
+            isMenuOpen: true
+        })
+    }
+
     render() {
+        const { isMenuOpen } = this.state; 
         return (
+            <>
+            {isMenuOpen ? <Menu /> : ''}
             <div className="container-fluid text-white">
                 <div className="row">
                     <div className="col-12 column column-1 Vh-100 p-0 position-relative">
@@ -23,7 +35,7 @@ class homePage extends Component {
                                 </div>
                                 <div className="w-25 h-100 mr-5 mt-2 position-relative">
                                     <div className="mt-4 pt-4 menu-btn position-relative d-flex justify-content-center align-items-center">
-                                        <div className="menu-btn-elt"/>
+                                        <button className={`menu-btn-elt ${isMenuOpen ? 'close_btn' : ''}`} onClick={this.openMenu}></button>
                                     </div>
                                 </div>
                             </nav>
@@ -101,6 +113,7 @@ class homePage extends Component {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }
