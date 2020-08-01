@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import img from "../name-design-agency-gliz.jpg";
 import Headroom from "react-headroom";
 import "../style/style.css";
-import Menu from './menu'
+import Menu from './menu';
 
 class homePage extends Component {
 
@@ -16,9 +16,9 @@ class homePage extends Component {
 
     openMenu = () => {
         this.setState({
-            isMenuOpen: true
+            isMenuOpen: !this.state.isMenuOpen
         })
-    }
+    };
 
     render() {
         const { isMenuOpen } = this.state; 
@@ -34,8 +34,8 @@ class homePage extends Component {
                                     <Link to='/' className="Link text-decoration-none text-white font-weight-bold">Name.</Link>
                                 </div>
                                 <div className="w-25 h-100 mr-5 mt-2 position-relative">
-                                    <div className="mt-4 pt-4 menu-btn position-relative d-flex justify-content-center align-items-center">
-                                        <button className={`menu-btn-elt ${isMenuOpen ? 'close_btn' : ''}`} onClick={this.openMenu}></button>
+                                    <div className="mt-4 menu-btn position-relative d-flex justify-content-center align-items-center">
+                                        <button className={`menu-btn-elt btn btn-link shadow-none ${isMenuOpen ? 'open':''}`} onClick={this.openMenu}/>
                                     </div>
                                 </div>
                             </nav>
@@ -91,8 +91,8 @@ class homePage extends Component {
                                     <div className="col-1 col-md-3 Vh-85 column"/>
                                     <p><Link to='/about'
                                              className="Link text-decoration-none text-white font-weight-bold column display-x position-absolute"
-                                             style={{left: '2%', top: '40%', zIndex: '1'}}>Get to know us.</Link></p>
-                                    <div className="column column-1 col-10 col-md-9 bg-danger vh-85 position-relative"/>
+                                             style={{left: '2%', top: '40%'}}>Get to know us.</Link></p>
+                                    <div className="column column-1 col-10 col-md-9 bg-danger vh-85 position-relative" style={{zIndex:'-1'}}/>
                                 </div>
                             </div>
                             <div className="col-12 h-10">
